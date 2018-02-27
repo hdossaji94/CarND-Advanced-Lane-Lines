@@ -119,14 +119,13 @@ Below I have given the code and image of my result plotted back down onto the ro
 
 Here's a [link to my video result](./project_video_output.mp4)
 
-<video controls src="project_video_output.mp4" / | width = 750>
 
 
 ### Pipeline (Challenge Video)
 
 Here is also a [link to my challenge video](./challenge_video_output.mp4) 
 
-<video controls src="challenge_video_output.mp4" / | width = 750>
+
 ---
 
 ### Discussion
