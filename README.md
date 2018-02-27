@@ -50,25 +50,25 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 #### 1. Provide an example of a distortion-corrected image.
 
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
-![alt text][ReadmeImages/TestImageDistortionCorrection.JPG]
+![alt text](ReadmeImages/TestImageDistortionCorrection.JPG)
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
 I used a combination of color and gradient thresholds to generate a binary image. I have defined functions that will take absolute sobel thresholds, magnitude of the gradient, and direction threshold of the gradient but only ended up using absolute sobel and direction in my combination of thresholding functions. However In the Advanced Lanes html file or in the ipynb file you can see examples of each individual thresholding function in action on a single image. Below is an example of the combination of gradient thresholds on a single image. 
 
-![alt text][ReadmeImages/CombinationThresholds.JPG]
+![alt text](ReadmeImages/CombinationThresholds.JPG)
 
 
 Along with using gradient thresholds, I also used color channel thresholds and the HLS color space while separting the S and L channels. Finally I used a mask area function to filter out any unwanted parts of the images. This is all done in the initial pipeline(img) function. Below is an example of an image after thresholding and masking. 
 
 
-![alt text][ReadmeImages/AllThresholdsandMasking.JPG]
+![alt text](ReadmeImages/AllThresholdsandMasking.JPG)
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
 The code for my perspective transform takes a sample image and manually extracts vertives to warp into a birds-eye view. Below is the code that includes the source and destintation points. 
 
-![alt text][ReadmeImages/PerspectiveTransformCode.JPG]
+![alt text](ReadmeImages/PerspectiveTransformCode.JPG)
 
 
 This resulted in the following source and destination points:
@@ -82,34 +82,34 @@ This resulted in the following source and destination points:
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image. Below is an example of an original image with its warped counterpart. This show the lines curving. 
 
-![alt text][ReadmeImages/PerspectiveTransformExample.JPG]
+![alt text](ReadmeImages/PerspectiveTransformExample.JPG)
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
 Then I did some other stuff and fit my lane lines with a 2nd order polynomial kinda like this:
 
-![alt text][ReadmeImages/PolynomialOfficialExample.JPG]
+![alt text](ReadmeImages/PolynomialOfficialExample.JPG)
 
 By performing a sliding window search and finding the 2 lanes by using the histogram approach I was able to create my own interpretation of the above image and eventually fit a polynomial. Below are visualizations of the histogram, the sliding window process, and then the polynomial fit.
 
-![alt text][ReadmeImages/Histogram.JPG]
-![alt text][ReadmeImages/SlidingWindows.JPG]
-![alt text][ReadmeImages/PolynomialFit.JPG]
+![alt text](ReadmeImages/Histogram.JPG)
+![alt text](ReadmeImages/SlidingWindows.JPG)
+![alt text](ReadmeImages/PolynomialFit.JPG)
 
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
 By using coversions of meters per pixel in the x and y dimension I was able to fit new polynomials to x and y in world space. This allowed me to calculate the radius of curvature and the center offset. Below is the code and the output. 
 
-![alt text][ReadmeImages/RadiusOfCurvature.JPG]
+![alt text](ReadmeImages/RadiusOfCurvature.JPG)
 
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
 Below I have given the code and image of my result plotted back down onto the road with lane area clearly identified and colored in. The image had to be unwarped as well. 
 
-![alt text][ReadmeImages/UnwarpCode.JPG]
-![alt text][ReadmeImages/UnwarpedImage.JPG]
+![alt text](ReadmeImages/UnwarpCode.JPG)
+![alt text](ReadmeImages/UnwarpedImage.JPG)
 
 ---
 
